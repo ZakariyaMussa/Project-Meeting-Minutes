@@ -5,7 +5,15 @@ from sqlalchemy.sql import func
 
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    data = db.Column(db.String(10000))
+    Dates = db.Column(db.String(10000))
+    Topic = db.Column(db.String(10000))
+    Attendees = db.Column(db.String(10000))
+    Raisedby = db.Column(db.String(10000))
+    Actionrequired = db.Column(db.String(10000))
+    Actionedby  = db.Column(db.String(10000))
+    Information	 = db.Column(db.String(10000))
+    Dateofcompletion = db.Column(db.String(10000))
+
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 

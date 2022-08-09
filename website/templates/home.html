@@ -1,38 +1,74 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
 <h1 align="center">Minute Taker</h1>
-  {% for note in user.notes %}
-    {{ note.data }}
-  {% endfor %}
-</ul>
-<table style="border: solid; width:100%">
+  
+
+<table class="table">
   <tr>
+    <th style="width: 50px;">Date</th>
     <th style="width: 50px;">Topic</th>
     <th style="width: 100px;">Attendees</th>
     <th style="width: 100px;">Raised by</th>
     <th style="width: 100px;">Action/s required</th>
     <th style="width: 100px;">To be actioned by</th>
-    <th style="width: 100px;">Action/s required</th>
-    <th style="width: 100px;">To be actioned by</th>
     <th style="width: 100px;">Subsequent Information</th>
     <th style="width: 100px;">Date of completion</th>
   </tr>
+  {% for note in user.notes %}
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{ note.Dates }}</td>
+    <td>{{ note.Topic }}</td>
+    <td>{{ note.Attendees }}</td>
+    <td>{{ note.Raisedby }}</td>
+    <td>{{ note.Actionrequired }}</td>
+    <td>{{ note.Actionedby }}</td>
+    <td>{{ note.Information }}</td>
+    <td>{{ note.Dateofcompletion }}</td>
   </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+  {% endfor %}
 </table>
+
 <form method="POST">
-  <textarea name="note" id="note" class="form-control"></textarea>
-  <br />
+  <div class="row" align="center">
+  <div class="form-group">
+  <label for="dates">Date:</label></br>
+  <input name="note.dates" id="note.dates" class="form-control" style="width: 100px;"></input>
+</div> 
+<div class="form-group">
+  <label for="topic">Topic:</label></br> 
+    <input name="note.topic" id="note.topic" class="form-control" style="width: 100px;"></input>
+  </div>
+  <div class="form-group">
+      <label for="Attendees">Attendees:</label></br>
+      <input name="note.Attendees" id="note.Attendees" class="form-control" style="width: 100px;"></input>
+    </div>
+    <div class="form-group">
+      <label for="Raisedby">Raisedby:</label></br>
+      <input name="note.Raisedby" id="note.Raisedby" class="form-control" style="width: 100px;"></input> 
+    </div>
+    <div class="form-group">
+      <label for="Actionrequired">Actionrequired:</label></br>
+      <input name="note.Actionrequired" id="note.Actionrequired" class="form-control" style="width: 110px;"></input>
+    </div>
+    <div class="form-group">
+      <label for="Actionedby">Actionedby:</label></br>
+      <input name="note.Actionedby" id="note.Actionedby" class="form-control" style="width: 100px;"></input>
+    </div>
+    <div class="form-group">
+      <label for="Information ">Information</label></br>
+      <input name="note.Information" id="note.Information" class="form-control" style="width: 110px;"></input>
+    </div>
+    <div class="form-group">
+      <label for="Dateofcompletion">Dateofcompletion:</label></br>
+      
+      <input name="note.Dateofcompletion" id="note.Dateofcompletion" class="form-control" style="width: 132px;"></input>
+    </div>
+  </br>
+    
+  </div>
   <div align="center">
     <button type="submit" class="btn btn-primary">Add Note</button>
   </div>
 </form>
+
 {% endblock %}

@@ -11,15 +11,18 @@ views = Blueprint('views', __name__)
 @login_required
 def home():
     if request.method == 'POST':
-        note = request.form.get('note')
-
-        if len(note) < 1:
-            flash('Note is too short!', category='error')
-        else:
-            new_note = Note(data=note, user_id=current_user.id)
-            db.session.add(new_note)
-            db.session.commit()
-            flash('Note added!', category='success')
+        Date=request.form.get("note.dates")
+        Topic=request.form.get("note.topic")
+        Attendees=request.form.get("note.Attendees")
+        Raisedby=request.form.get("note.Raisedby")
+        Actionrequired=request.form.get("note.Actionrequired")
+        Actionedby=request.form.get("note.Actionedby")
+        Information=request.form.get("note.Information")
+        Dateofcompletion=request.form.get("note.Dateofcompletion")
+        new_note = Note(Dates=Date, Topic=Topic, Attendees=Attendees, Raisedby=Raisedby, Actionrequired=Actionrequired, Actionedby=Actionedby, Information=Information, Dateofcompletion=Dateofcompletion, user_id=current_user.id)
+        db.session.add(new_note)
+        db.session.commit()
+        flash('Note added!', category='success')
 
     return render_template("home.html", user=current_user)
 

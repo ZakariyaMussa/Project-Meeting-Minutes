@@ -27,7 +27,7 @@ def login():
 
     return render_template("login.html", user=current_user)
 
-
+@auth.route
 @auth.route('/logout')
 @login_required
 def logout():

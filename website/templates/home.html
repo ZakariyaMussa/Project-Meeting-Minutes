@@ -3,14 +3,14 @@
 <h1 align="center">Minute Taker</h1>
   
 
-<table class="table">
+<table class="table table-dark" style="width: 1080px; float: left;" >
   <tr>
-    <th style="width: 100px;">Date</th>
-    <th style="width: 50px;">Topic</th>
-    <th style="width: 100px;">Attendees</th>
-    <th style="width: 100px;">Raised by</th>
-    <th style="width: 100px;">Action/s required</th>
-    <th style="width: 100px;">To be actioned by</th>
+    <th>Date</th>
+    <th>Topic</th>
+    <th>Attendees</th>
+    <th>Raised by</th>
+    <th>Action/s required</th>
+    <th>To be actioned by</th>
 
     <th style="width: 100px;">Subsequent Information</th>
     <th style="width: 100px;">Date of completion</th>
@@ -31,6 +31,8 @@
  
   {% endfor %}
 </table>
+<div class="container">
+
 
 <form method="POST">
   <div class="row" align="center">
@@ -49,7 +51,7 @@
   </div>
   <div class="form-group">
       <label for="Attendees">Attendees:</label></br>
-      <input name="note.Attendees" id="note.Attendees" class="form-control" style="width: 100px;"></input>
+      <input name="note.Attendees" id="note.Attendees" class="form-control" style="width: 150px;"></input>
     </div>
     <div class="form-group">
       <label for="Raisedby">Raisedby:</label></br>
@@ -65,12 +67,12 @@
     </div>
     <div class="form-group">
       <label for="Information ">Information</label></br>
-      <input name="note.Information" id="note.Information" class="form-control" style="width: 110px;"></input>
+      <input name="note.Information" id="note.Information" class="form-control" style="width: 200px;"></input>
     </div>
     <div class="form-group">
       <label for="Dateofcompletion">Dateofcompletion:</label></br>
       
-      <input type="date" name="note.Dateofcompletion" id="note.Dateofcompletion" style="height: 37px; ;"
+      <input type="date" name="note.Dateofcompletion" id="note.Dateofcompletion"style="width: 200px;height: 37px;"
        value="2022-08-22"
        min="2022-01-01" max="2025-12-31">
     </div>
@@ -82,6 +84,6 @@
   </div>
   
 </form>
-
+</div>
 
 {% endblock %}
